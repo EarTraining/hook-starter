@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import Toggle from './Toggle';
+import { useTitleInput } from './hooks/useTitleInput';
 
 const App = () => {
   
 //const [value, setValue] = useState(intialState);
-const [name, setName] = useState('');
+/*  Moved for Video 7 **
+//const [name, setName] = useState('');
 
-useEffect(() => {
-  document.title = name;
-})
+//useEffect(() => {
+  //updates actual tab title w/o interrupting lifecycle
+  //document.title = name;
+//})
+*/
+ 
+  const [name, setName] = useTitleInput('');
 
   return (
     <div className="main-wrapper">
@@ -36,4 +42,6 @@ useEffect(() => {
 //   console.log('email sent to '+ value + '!');
 //   setValue('');
 //  }
+
+
 export default App;
