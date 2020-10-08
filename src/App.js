@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Toggle from './Toggle';
 
 const App = () => {
@@ -6,6 +6,9 @@ const App = () => {
 //const [value, setValue] = useState(intialState);
 const [name, setName] = useState('');
 
+useEffect(() => {
+  document.title = name;
+})
 
   return (
     <div className="main-wrapper">
@@ -13,7 +16,8 @@ const [name, setName] = useState('');
       <Toggle/>
       <form onSubmit={ e => {
           e.preventDefault();
-          formSubmit(name, setName);
+          // ** FROM VIDEO 5 **
+          //formSubmit(name, setName);
         }}>
 
         <input 
@@ -27,8 +31,9 @@ const [name, setName] = useState('');
     </div>
   );
 };
-const formSubmit = (value, setValue) => {
-  console.log('email sent to '+ value + '!');
-  setValue('');
- }
+// ** FROM VIDEO 5 **
+// const formSubmit = (value, setValue) => {
+//   console.log('email sent to '+ value + '!');
+//   setValue('');
+//  }
 export default App;
